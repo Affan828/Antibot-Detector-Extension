@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "id": "cheq",
+    "label": "CHEQ",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "CHEQ AI Technologies",
+    "vendorUrl": "https://cheq.ai",
+    "icon": "vendor-default.png",
+    "color": "#FF5722",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Go-to-market security platform for ad fraud and bot detection.",
+  "patterns": {
+    "urls": [
+      { "match": "cheq.ai", "score": 100, "note": "CHEQ domain" },
+      { "match": "cheqzone.com", "score": 95, "note": "CHEQ tracking domain" }
+    ],
+    "content": [
+      { "match": "cheq", "score": 80, "note": "CHEQ reference" }
+    ]
+  }
+}

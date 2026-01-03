@@ -1,0 +1,25 @@
+{
+  "detector": {
+    "id": "canvas-fingerprint",
+    "label": "Canvas Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://en.wikipedia.org/wiki/Canvas_fingerprinting",
+    "icon": "vendor-default.png",
+    "color": "#8B5CF6",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Uses HTML5 Canvas API to create unique device fingerprints based on rendering differences.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "HTMLCanvasElement.prototype.toDataURL", "score": 95, "note": "Converts canvas to data URL for fingerprinting" },
+      { "target": "CanvasRenderingContext2D.prototype.getImageData", "score": 90, "note": "Extracts pixel data from canvas" },
+      { "target": "HTMLCanvasElement.prototype.toBlob", "score": 85, "note": "Converts canvas to blob for fingerprinting" },
+      { "target": "CanvasRenderingContext2D.prototype.measureText", "score": 85, "note": "Measures text dimensions for font fingerprinting" },
+      { "target": "OffscreenCanvas.prototype.getContext", "score": 90, "note": "Creates offscreen canvas context" }
+    ]
+  }
+}

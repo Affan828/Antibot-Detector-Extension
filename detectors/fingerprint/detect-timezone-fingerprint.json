@@ -1,0 +1,22 @@
+{
+  "detector": {
+    "id": "timezone-fingerprint",
+    "label": "Timezone Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat",
+    "icon": "vendor-default.png",
+    "color": "#06B6D4",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Detects user timezone and locale settings for geographic identification.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Date.prototype.getTimezoneOffset", "score": 90, "note": "Gets timezone offset" },
+      { "target": "Intl.DateTimeFormat", "score": 85, "note": "Internationalization API" }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "detector": {
+    "id": "recaptcha",
+    "label": "Google reCAPTCHA",
+    "active": true,
+    "type": "captcha"
+  },
+  "meta": {
+    "vendor": "Google",
+    "vendorUrl": "https://www.google.com/recaptcha/",
+    "icon": "vendor-recaptcha.png",
+    "color": "#4285F4",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Google's CAPTCHA service for protecting websites from spam and abuse.",
+  "patterns": {
+    "urls": [
+      { "match": "recaptcha/api", "score": 100, "note": "reCAPTCHA API endpoint" },
+      { "match": "gstatic.com/recaptcha", "score": 95, "note": "Static resources" },
+      { "match": "google.com/recaptcha", "score": 100, "note": "Google reCAPTCHA" },
+      { "match": "recaptcha.net", "score": 95, "note": "Alternative domain" }
+    ],
+    "content": [
+      { "match": "grecaptcha", "score": 100, "note": "Global reCAPTCHA object" },
+      { "match": "g-recaptcha", "score": 90, "note": "Container class" },
+      { "match": "grecaptcha.execute", "score": 95, "note": "v3 execution" },
+      { "match": "grecaptcha.render", "score": 90, "note": "v2 rendering" }
+    ],
+    "dom": [
+      { "match": ".g-recaptcha", "score": 95, "note": "reCAPTCHA container" },
+      { "match": "[data-sitekey]", "score": 85, "note": "Site key attribute" },
+      { "match": "iframe[src*='recaptcha']", "score": 90, "note": "reCAPTCHA iframe" }
+    ],
+    "globals": [
+      { "match": "grecaptcha", "score": 100, "note": "reCAPTCHA main object" },
+      { "match": "grecaptcha.ready", "score": 95, "note": "Ready function" },
+      { "match": "___grecaptcha_cfg", "score": 90, "note": "Config object" }
+    ]
+  }
+}

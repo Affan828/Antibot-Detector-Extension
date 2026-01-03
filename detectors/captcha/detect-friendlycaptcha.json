@@ -1,0 +1,30 @@
+{
+  "detector": {
+    "id": "friendlycaptcha",
+    "label": "Friendly Captcha",
+    "active": true,
+    "type": "captcha"
+  },
+  "meta": {
+    "vendor": "Friendly Captcha",
+    "vendorUrl": "https://friendlycaptcha.com",
+    "icon": "vendor-default.png",
+    "color": "#5865F2",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "GDPR-compliant proof-of-work CAPTCHA from Germany.",
+  "patterns": {
+    "urls": [
+      { "match": "friendlycaptcha.com", "score": 100, "note": "Friendly Captcha domain" },
+      { "match": "cdn.jsdelivr.net/npm/friendly-challenge", "score": 95, "note": "CDN resource" }
+    ],
+    "content": [
+      { "match": "friendlycaptcha", "score": 95, "note": "Friendly Captcha reference" },
+      { "match": "frc-captcha", "score": 100, "note": "FRC class" }
+    ],
+    "dom": [
+      { "match": ".frc-captcha", "score": 100, "note": "FRC container" }
+    ]
+  }
+}

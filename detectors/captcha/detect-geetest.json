@@ -1,0 +1,37 @@
+{
+  "detector": {
+    "id": "geetest",
+    "label": "GeeTest",
+    "active": true,
+    "type": "captcha"
+  },
+  "meta": {
+    "vendor": "GeeTest",
+    "vendorUrl": "https://www.geetest.com",
+    "icon": "vendor-geetest.png",
+    "color": "#1BA8FF",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Chinese CAPTCHA with slide and click challenges.",
+  "patterns": {
+    "urls": [
+      { "match": "geetest.com", "score": 100, "note": "GeeTest domain" },
+      { "match": "gt.geetest.com", "score": 100, "note": "GeeTest API" },
+      { "match": "gcaptcha4.geetest.com", "score": 95, "note": "GeeTest v4" }
+    ],
+    "content": [
+      { "match": "initGeetest", "score": 100, "note": "GeeTest init function" },
+      { "match": "initGeetest4", "score": 100, "note": "GeeTest v4 init" },
+      { "match": "geetest", "score": 85, "note": "GeeTest reference" }
+    ],
+    "dom": [
+      { "match": ".geetest_holder", "score": 100, "note": "GeeTest container" },
+      { "match": "#geetest-wrap", "score": 95, "note": "GeeTest wrapper" }
+    ],
+    "globals": [
+      { "match": "initGeetest", "score": 100, "note": "GeeTest init" },
+      { "match": "initGeetest4", "score": 100, "note": "GeeTest v4 init" }
+    ]
+  }
+}

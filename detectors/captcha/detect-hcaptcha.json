@@ -1,0 +1,36 @@
+{
+  "detector": {
+    "id": "hcaptcha",
+    "label": "hCaptcha",
+    "active": true,
+    "type": "captcha"
+  },
+  "meta": {
+    "vendor": "Intuition Machines",
+    "vendorUrl": "https://www.hcaptcha.com",
+    "icon": "vendor-hcaptcha.png",
+    "color": "#00C9B7",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Privacy-focused CAPTCHA alternative used by Cloudflare and Discord.",
+  "patterns": {
+    "urls": [
+      { "match": "hcaptcha.com/1/api.js", "score": 100, "note": "hCaptcha API" },
+      { "match": "js.hcaptcha.com", "score": 95, "note": "hCaptcha JS domain" },
+      { "match": "newassets.hcaptcha.com", "score": 90, "note": "hCaptcha assets" }
+    ],
+    "content": [
+      { "match": "hcaptcha", "score": 90, "note": "hCaptcha reference" },
+      { "match": "h-captcha", "score": 95, "note": "Container class" }
+    ],
+    "dom": [
+      { "match": ".h-captcha", "score": 100, "note": "hCaptcha container" },
+      { "match": "iframe[src*='hcaptcha']", "score": 95, "note": "hCaptcha iframe" }
+    ],
+    "globals": [
+      { "match": "hcaptcha", "score": 100, "note": "hCaptcha main object" },
+      { "match": "hcaptcha.render", "score": 95, "note": "Render function" }
+    ]
+  }
+}

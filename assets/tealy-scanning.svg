@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Tealy the Spider - Scanning State (animated look) -->
+  <defs>
+    <radialGradient id="bodyGradScan" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </radialGradient>
+    <radialGradient id="headGradScan" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#5EEAD4"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </radialGradient>
+    <filter id="glowScan">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Scanning pulse animation -->
+    <radialGradient id="pulseGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Scanning pulse ring -->
+  <circle cx="60" cy="60" r="50" fill="url(#pulseGrad)" opacity="0.5">
+    <animate attributeName="r" values="30;55;30" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Spider Legs - more spread out, active pose -->
+  <g stroke="#0D9488" stroke-width="3" stroke-linecap="round" fill="none">
+    <!-- Left legs - animated -->
+    <path d="M45 52 Q22 38 10 22">
+      <animate attributeName="d" values="M45 52 Q22 38 10 22;M45 52 Q25 40 12 25;M45 52 Q22 38 10 22" dur="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M40 58 Q15 50 3 45">
+      <animate attributeName="d" values="M40 58 Q15 50 3 45;M40 58 Q18 52 5 48;M40 58 Q15 50 3 45" dur="0.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M40 67 Q15 75 5 88">
+      <animate attributeName="d" values="M40 67 Q15 75 5 88;M40 67 Q18 77 8 90;M40 67 Q15 75 5 88" dur="0.55s" repeatCount="indefinite"/>
+    </path>
+    <path d="M45 73 Q28 90 18 102">
+      <animate attributeName="d" values="M45 73 Q28 90 18 102;M45 73 Q30 92 20 104;M45 73 Q28 90 18 102" dur="0.65s" repeatCount="indefinite"/>
+    </path>
+    <!-- Right legs - animated -->
+    <path d="M75 52 Q98 38 110 22">
+      <animate attributeName="d" values="M75 52 Q98 38 110 22;M75 52 Q95 40 108 25;M75 52 Q98 38 110 22" dur="0.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M80 58 Q105 50 117 45">
+      <animate attributeName="d" values="M80 58 Q105 50 117 45;M80 58 Q102 52 115 48;M80 58 Q105 50 117 45" dur="0.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M80 67 Q105 75 115 88">
+      <animate attributeName="d" values="M80 67 Q105 75 115 88;M80 67 Q102 77 112 90;M80 67 Q105 75 115 88" dur="0.55s" repeatCount="indefinite"/>
+    </path>
+    <path d="M75 73 Q92 90 102 102">
+      <animate attributeName="d" values="M75 73 Q92 90 102 102;M75 73 Q90 92 100 104;M75 73 Q92 90 102 102" dur="0.65s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Leg joints with glow -->
+  <g fill="#14B8A6" filter="url(#glowScan)">
+    <circle cx="10" cy="22" r="3"/>
+    <circle cx="3" cy="45" r="3"/>
+    <circle cx="5" cy="88" r="3"/>
+    <circle cx="18" cy="102" r="3"/>
+    <circle cx="110" cy="22" r="3"/>
+    <circle cx="117" cy="45" r="3"/>
+    <circle cx="115" cy="88" r="3"/>
+    <circle cx="102" cy="102" r="3"/>
+  </g>
+  
+  <!-- Spider Body (Abdomen) -->
+  <ellipse cx="60" cy="72" rx="22" ry="18" fill="url(#bodyGradScan)" filter="url(#glowScan)"/>
+  
+  <!-- Spider Head (Cephalothorax) -->
+  <ellipse cx="60" cy="50" rx="18" ry="15" fill="url(#headGradScan)" filter="url(#glowScan)"/>
+  
+  <!-- Eyes - focused look -->
+  <g>
+    <!-- Main eyes - slightly narrowed, focused -->
+    <ellipse cx="52" cy="47" rx="6" ry="5" fill="#0C1222"/>
+    <ellipse cx="68" cy="47" rx="6" ry="5" fill="#0C1222"/>
+    <!-- Eye shine - brighter when scanning -->
+    <ellipse cx="54" cy="45" rx="3" ry="2.5" fill="#5EEAD4">
+      <animate attributeName="opacity" values="1;0.5;1" dur="0.8s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="70" cy="45" rx="3" ry="2.5" fill="#5EEAD4">
+      <animate attributeName="opacity" values="1;0.5;1" dur="0.8s" repeatCount="indefinite"/>
+    </ellipse>
+    <!-- Small secondary eyes -->
+    <circle cx="45" cy="43" r="2.5" fill="#0C1222"/>
+    <circle cx="75" cy="43" r="2.5" fill="#0C1222"/>
+    <circle cx="46" cy="42" r="1" fill="#5EEAD4"/>
+    <circle cx="76" cy="42" r="1" fill="#5EEAD4"/>
+  </g>
+  
+  <!-- Determined expression -->
+  <path d="M54 55 L66 55" stroke="#0C1222" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Chelicerae -->
+  <path d="M56 58 L54 62" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
+  <path d="M64 58 L66 62" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
+</svg>
+

@@ -1,0 +1,34 @@
+{
+  "detector": {
+    "id": "kasada",
+    "label": "Kasada",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Kasada",
+    "vendorUrl": "https://www.kasada.io",
+    "icon": "vendor-default.png",
+    "color": "#FF6B35",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Polyform protection using cryptographic proof-of-work challenges.",
+  "patterns": {
+    "cookies": [
+      { "match": "x-kpsdk-ct", "score": 100, "note": "Kasada token cookie" },
+      { "match": "x-kpsdk-cd", "score": 95, "note": "Kasada data cookie" }
+    ],
+    "urls": [
+      { "match": "/149e9513-01fa-4fb0-aad4-566afd725d1b/", "score": 95, "note": "Kasada challenge path" },
+      { "match": "ct.kasadapolyform.io", "score": 100, "note": "Kasada cloud endpoint" }
+    ],
+    "content": [
+      { "match": "KPSDK", "score": 100, "note": "Kasada SDK reference" },
+      { "match": "kasada", "score": 85, "note": "Brand in content" }
+    ],
+    "globals": [
+      { "match": "KPSDK", "score": 100, "note": "Kasada SDK object" }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "detector": {
+    "id": "perimeterx",
+    "label": "PerimeterX (HUMAN)",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "HUMAN Security (formerly PerimeterX)",
+    "vendorUrl": "https://www.humansecurity.com",
+    "icon": "vendor-perimeterx.png",
+    "color": "#6366F1",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Behavioral biometrics and device fingerprinting for bot detection.",
+  "patterns": {
+    "cookies": [
+      { "match": "_px3", "score": 100, "note": "PerimeterX v3 cookie" },
+      { "match": "_px2", "score": 95, "note": "PerimeterX v2 cookie" },
+      { "match": "_pxvid", "score": 90, "note": "Visitor ID cookie" },
+      { "match": "_pxhd", "score": 85, "note": "Header data cookie" }
+    ],
+    "urls": [
+      { "match": "captcha.px-cdn.net", "score": 100, "note": "CAPTCHA CDN" },
+      { "match": "client.perimeterx.net", "score": 95, "note": "Client endpoint" },
+      { "match": "collector.px-cdn.net", "score": 90, "note": "Data collector" }
+    ],
+    "content": [
+      { "match": "PXu6b0qd2S", "score": 95, "note": "PerimeterX app ID pattern" },
+      { "match": "_pxAppId", "score": 90, "note": "App ID variable" }
+    ],
+    "globals": [
+      { "match": "_pxUuid", "score": 100, "note": "Session UUID" },
+      { "match": "_pxVid", "score": 95, "note": "Visitor ID" },
+      { "match": "PX", "score": 85, "note": "PX namespace" }
+    ],
+    "dom": [
+      { "match": "#px-captcha", "score": 100, "note": "CAPTCHA container" }
+    ]
+  }
+}

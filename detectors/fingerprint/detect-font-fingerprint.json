@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "id": "font-fingerprint",
+    "label": "Font Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/FontFace",
+    "icon": "vendor-default.png",
+    "color": "#8B5CF6",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Detects installed system fonts by measuring text rendering dimensions.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "FontFaceSet.prototype.check", "score": 95, "note": "Checks if font is available" },
+      { "target": "CanvasRenderingContext2D.prototype.measureText", "score": 90, "note": "Measures text to detect fonts" },
+      { "target": "document.fonts.check", "score": 95, "note": "Font availability check" }
+    ]
+  }
+}

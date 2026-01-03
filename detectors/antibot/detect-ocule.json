@@ -1,0 +1,25 @@
+{
+  "detector": {
+    "id": "ocule",
+    "label": "Ocule",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Ocule",
+    "vendorUrl": "https://www.ocule.com",
+    "icon": "vendor-default.png",
+    "color": "#7C3AED",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "AI-powered bot detection and fraud prevention.",
+  "patterns": {
+    "urls": [
+      { "match": "ocule.com", "score": 100, "note": "Ocule domain" }
+    ],
+    "content": [
+      { "match": "ocule", "score": 85, "note": "Ocule reference" }
+    ]
+  }
+}

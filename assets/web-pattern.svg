@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" fill="none">
+  <!-- Spider Web Background Pattern -->
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1E2A3F"/>
+      <stop offset="100%" stop-color="#0C1222"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="600" fill="url(#bgGrad)"/>
+  
+  <!-- Web structure - centered at top -->
+  <g stroke="rgba(20, 184, 166, 0.08)" stroke-width="1" fill="none">
+    <!-- Radial lines from center -->
+    <line x1="200" y1="120" x2="200" y2="0"/>
+    <line x1="200" y1="120" x2="280" y2="20"/>
+    <line x1="200" y1="120" x2="350" y2="60"/>
+    <line x1="200" y1="120" x2="400" y2="120"/>
+    <line x1="200" y1="120" x2="380" y2="200"/>
+    <line x1="200" y1="120" x2="340" y2="280"/>
+    <line x1="200" y1="120" x2="280" y2="340"/>
+    <line x1="200" y1="120" x2="200" y2="380"/>
+    <line x1="200" y1="120" x2="120" y2="340"/>
+    <line x1="200" y1="120" x2="60" y2="280"/>
+    <line x1="200" y1="120" x2="20" y2="200"/>
+    <line x1="200" y1="120" x2="0" y2="120"/>
+    <line x1="200" y1="120" x2="50" y2="60"/>
+    <line x1="200" y1="120" x2="120" y2="20"/>
+    
+    <!-- Concentric web circles -->
+    <circle cx="200" cy="120" r="30"/>
+    <circle cx="200" cy="120" r="60"/>
+    <circle cx="200" cy="120" r="100"/>
+    <circle cx="200" cy="120" r="150"/>
+    <circle cx="200" cy="120" r="210"/>
+    <circle cx="200" cy="120" r="280"/>
+    
+    <!-- Spiral connecting strands -->
+    <path d="M200 90 Q230 95 230 120 Q230 145 200 150 Q170 155 170 120 Q170 85 210 80"/>
+  </g>
+  
+  <!-- Secondary web pattern - bottom area -->
+  <g stroke="rgba(20, 184, 166, 0.05)" stroke-width="1" fill="none" transform="translate(0, 300)">
+    <line x1="100" y1="150" x2="100" y2="50"/>
+    <line x1="100" y1="150" x2="180" y2="80"/>
+    <line x1="100" y1="150" x2="200" y2="150"/>
+    <line x1="100" y1="150" x2="180" y2="220"/>
+    <line x1="100" y1="150" x2="100" y2="280"/>
+    <line x1="100" y1="150" x2="20" y2="220"/>
+    <line x1="100" y1="150" x2="0" y2="150"/>
+    <line x1="100" y1="150" x2="20" y2="80"/>
+    
+    <circle cx="100" cy="150" r="25"/>
+    <circle cx="100" cy="150" r="55"/>
+    <circle cx="100" cy="150" r="90"/>
+  </g>
+  
+  <!-- Corner web accent - top right -->
+  <g stroke="rgba(20, 184, 166, 0.06)" stroke-width="1" fill="none">
+    <path d="M400 0 Q350 30 320 80"/>
+    <path d="M400 0 Q360 50 340 100"/>
+    <path d="M400 0 Q380 60 370 110"/>
+    <path d="M320 80 Q340 90 340 100"/>
+    <path d="M340 100 Q355 105 370 110"/>
+  </g>
+  
+  <!-- Corner web accent - bottom left -->
+  <g stroke="rgba(20, 184, 166, 0.06)" stroke-width="1" fill="none" transform="translate(0, 600) scale(1, -1)">
+    <path d="M0 0 Q50 30 80 80"/>
+    <path d="M0 0 Q40 50 60 100"/>
+    <path d="M0 0 Q20 60 30 110"/>
+    <path d="M80 80 Q60 90 60 100"/>
+    <path d="M60 100 Q45 105 30 110"/>
+  </g>
+  
+  <!-- Subtle dew drops on web -->
+  <g fill="rgba(20, 184, 166, 0.15)">
+    <circle cx="200" cy="90" r="2"/>
+    <circle cx="230" cy="120" r="1.5"/>
+    <circle cx="200" cy="150" r="2"/>
+    <circle cx="170" cy="120" r="1.5"/>
+    <circle cx="260" cy="100" r="1"/>
+    <circle cx="140" cy="100" r="1"/>
+    <circle cx="250" cy="150" r="1.5"/>
+    <circle cx="150" cy="150" r="1.5"/>
+  </g>
+</svg>
+

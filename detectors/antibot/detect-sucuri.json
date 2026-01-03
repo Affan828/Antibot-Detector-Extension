@@ -1,0 +1,30 @@
+{
+  "detector": {
+    "id": "sucuri",
+    "label": "Sucuri WAF",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Sucuri (GoDaddy)",
+    "vendorUrl": "https://sucuri.net",
+    "icon": "vendor-sucuri.png",
+    "color": "#86BC25",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Website firewall with DDoS protection and malware scanning.",
+  "patterns": {
+    "cookies": [
+      { "match": "sucuri_cloudproxy_uuid", "score": 100, "note": "Sucuri proxy UUID" }
+    ],
+    "headers": [
+      { "match": "X-Sucuri-ID", "score": 100, "note": "Sucuri server ID" },
+      { "match": "X-Sucuri-Cache", "score": 90, "note": "Sucuri cache header" }
+    ],
+    "content": [
+      { "match": "sucuri.net", "score": 85, "note": "Sucuri domain reference" },
+      { "match": "Access Denied - Sucuri", "score": 100, "note": "Block page" }
+    ]
+  }
+}

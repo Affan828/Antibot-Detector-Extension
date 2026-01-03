@@ -1,0 +1,30 @@
+{
+  "detector": {
+    "id": "aws-waf",
+    "label": "AWS WAF",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Amazon Web Services",
+    "vendorUrl": "https://aws.amazon.com/waf/",
+    "icon": "vendor-aws.png",
+    "color": "#FF9900",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "AWS Web Application Firewall with bot control managed rules.",
+  "patterns": {
+    "cookies": [
+      { "match": "aws-waf-token", "score": 100, "note": "WAF token cookie" },
+      { "match": "awswaf", "score": 95, "note": "AWS WAF cookie" }
+    ],
+    "urls": [
+      { "match": "challenge.aws.a]mazon.com", "score": 100, "note": "Challenge domain" }
+    ],
+    "content": [
+      { "match": "awswaf", "score": 90, "note": "AWS WAF reference" },
+      { "match": "aws-waf-challenge", "score": 100, "note": "Challenge element" }
+    ]
+  }
+}

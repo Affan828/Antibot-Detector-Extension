@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "id": "geolocation-fingerprint",
+    "label": "Geolocation Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API",
+    "icon": "vendor-default.png",
+    "color": "#06B6D4",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Accesses device location data for user tracking and identification.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Geolocation.prototype.getCurrentPosition", "score": 100, "note": "Gets current GPS position" },
+      { "target": "Geolocation.prototype.watchPosition", "score": 95, "note": "Watches position changes" },
+      { "target": "navigator.geolocation.getCurrentPosition", "score": 100, "note": "Navigator geolocation access" }
+    ]
+  }
+}

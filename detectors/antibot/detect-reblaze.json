@@ -1,0 +1,29 @@
+{
+  "detector": {
+    "id": "reblaze",
+    "label": "Reblaze",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Reblaze Technologies",
+    "vendorUrl": "https://www.reblaze.com",
+    "icon": "vendor-reblaze.png",
+    "color": "#00B4D8",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Cloud-native web security platform with bot mitigation.",
+  "patterns": {
+    "cookies": [
+      { "match": "rbzid", "score": 100, "note": "Reblaze session ID" },
+      { "match": "rbzsessionid", "score": 95, "note": "Reblaze session cookie" }
+    ],
+    "headers": [
+      { "match": "X-Reblaze", "score": 100, "note": "Reblaze header" }
+    ],
+    "content": [
+      { "match": "reblaze", "score": 80, "note": "Reblaze reference" }
+    ]
+  }
+}

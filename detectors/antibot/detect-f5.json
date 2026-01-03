@@ -1,0 +1,30 @@
+{
+  "detector": {
+    "id": "f5",
+    "label": "F5 Shape Security",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "F5 Networks",
+    "vendorUrl": "https://www.f5.com/products/security/shape-security",
+    "icon": "vendor-f5.png",
+    "color": "#E4002B",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Advanced bot defense using client-side telemetry and ML classification.",
+  "patterns": {
+    "cookies": [
+      { "match": "TS", "score": 80, "note": "F5 session cookie prefix", "isPrefix": true },
+      { "match": "TSxxxxxxxx", "score": 85, "note": "F5 tracking cookie pattern" }
+    ],
+    "urls": [
+      { "match": "/tspd/", "score": 95, "note": "F5 challenge path" }
+    ],
+    "content": [
+      { "match": "f5_cspm", "score": 100, "note": "F5 client-side protection" },
+      { "match": "F5_ST", "score": 90, "note": "F5 session token" }
+    ]
+  }
+}

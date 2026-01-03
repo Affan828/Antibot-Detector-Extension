@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "id": "meetrics",
+    "label": "Meetrics",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Meetrics (DoubleVerify)",
+    "vendorUrl": "https://www.meetrics.com",
+    "icon": "vendor-default.png",
+    "color": "#00C389",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Ad verification and viewability measurement with bot detection.",
+  "patterns": {
+    "urls": [
+      { "match": "meetrics.net", "score": 100, "note": "Meetrics domain" },
+      { "match": "de.ioam.de", "score": 90, "note": "IOAM tracking" }
+    ],
+    "content": [
+      { "match": "meetrics", "score": 90, "note": "Meetrics reference" }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "id": "css-fingerprint",
+    "label": "CSS Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    "icon": "vendor-default.png",
+    "color": "#3B82F6",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Detects installed fonts and CSS capabilities through computed styles and media queries.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Window.prototype.getComputedStyle", "score": 85, "note": "Gets computed CSS styles" },
+      { "target": "CSS.supports", "score": 80, "note": "Checks CSS feature support" },
+      { "target": "matchMedia", "score": 75, "note": "Media query matching" }
+    ]
+  }
+}

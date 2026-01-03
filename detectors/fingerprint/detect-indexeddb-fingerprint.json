@@ -1,0 +1,22 @@
+{
+  "detector": {
+    "id": "indexeddb-fingerprint",
+    "label": "IndexedDB Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API",
+    "icon": "vendor-default.png",
+    "color": "#A855F7",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Uses IndexedDB to store and retrieve persistent identifiers for tracking.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "IDBFactory.prototype.open", "score": 85, "note": "Opens IndexedDB database" },
+      { "target": "indexedDB.open", "score": 85, "note": "IndexedDB access" }
+    ]
+  }
+}

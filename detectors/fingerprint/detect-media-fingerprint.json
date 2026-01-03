@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "id": "media-fingerprint",
+    "label": "Media Device Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices",
+    "icon": "vendor-default.png",
+    "color": "#EF4444",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Enumerates cameras, microphones, and other media devices for device identification.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "MediaDevices.prototype.enumerateDevices", "score": 100, "note": "Lists all media devices" },
+      { "target": "MediaDevices.prototype.getUserMedia", "score": 95, "note": "Requests media access" },
+      { "target": "navigator.mediaDevices.enumerateDevices", "score": 100, "note": "Media device enumeration" }
+    ]
+  }
+}

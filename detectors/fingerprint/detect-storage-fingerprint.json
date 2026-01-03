@@ -1,0 +1,24 @@
+{
+  "detector": {
+    "id": "storage-fingerprint",
+    "label": "Storage API Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Storage",
+    "icon": "vendor-default.png",
+    "color": "#8B5CF6",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Uses localStorage and sessionStorage to store persistent identifiers.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Storage.prototype.setItem", "score": 75, "note": "Sets storage item" },
+      { "target": "Storage.prototype.getItem", "score": 75, "note": "Gets storage item" },
+      { "target": "localStorage.setItem", "score": 75, "note": "localStorage access" },
+      { "target": "sessionStorage.setItem", "score": 75, "note": "sessionStorage access" }
+    ]
+  }
+}

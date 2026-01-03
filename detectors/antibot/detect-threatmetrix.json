@@ -1,0 +1,27 @@
+{
+  "detector": {
+    "id": "threatmetrix",
+    "label": "ThreatMetrix",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "LexisNexis Risk Solutions",
+    "vendorUrl": "https://risk.lexisnexis.com/products/threatmetrix",
+    "icon": "vendor-default.png",
+    "color": "#1A1F71",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Digital identity verification and fraud prevention platform.",
+  "patterns": {
+    "urls": [
+      { "match": "h.online-metrix.net", "score": 100, "note": "ThreatMetrix domain" },
+      { "match": "online-metrix.net", "score": 95, "note": "Metrix domain" }
+    ],
+    "content": [
+      { "match": "tmx_fp", "score": 100, "note": "ThreatMetrix fingerprint" },
+      { "match": "threatmetrix", "score": 90, "note": "Brand reference" }
+    ]
+  }
+}

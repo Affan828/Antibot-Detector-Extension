@@ -1,0 +1,21 @@
+{
+  "detector": {
+    "id": "battery-fingerprint",
+    "label": "Battery API Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API",
+    "icon": "vendor-default.png",
+    "color": "#F59E0B",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Extracts battery level and charging status for device identification.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Navigator.prototype.getBattery", "score": 100, "note": "Gets battery status information" }
+    ]
+  }
+}

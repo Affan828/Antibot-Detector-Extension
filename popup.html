@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrappey Bot Detector</title>
+  <link rel="icon" type="image/x-icon" href="icons/scrappey.ico">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Web Pattern Background -->
+    <div class="web-background"></div>
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <img src="assets/tealy-idle.svg" alt="Tealy" class="logo-icon" id="tealyLogo">
+          <div class="logo-text">
+            <span class="brand-name">Scrappey</span>
+            <span class="brand-tagline">Bot Detector</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="toggle-container">
+          <input type="checkbox" id="enableToggle" class="toggle-input" checked>
+          <label for="enableToggle" class="toggle-label">
+            <span class="toggle-track">
+              <span class="toggle-thumb"></span>
+            </span>
+          </label>
+        </div>
+        <button id="settingsBtn" class="icon-btn" title="Settings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mascot Section -->
+    <section class="mascot-section" id="mascotSection">
+      <div class="mascot-container">
+        <img src="assets/tealy-idle.svg" alt="Tealy" class="mascot" id="tealyMascot">
+        <div class="mascot-status" id="mascotStatus">
+          <span class="status-text">Ready to scan</span>
+        </div>
+      </div>
+      <div class="current-site" id="currentSite">
+        <img class="site-favicon" id="siteFavicon" src="" alt="">
+        <span class="site-url" id="siteUrl">Loading...</span>
+      </div>
+    </section>
+
+    <!-- Stats Grid -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-card" data-category="antibot">
+          <div class="stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="stat-value" id="antibotCount">0</div>
+          <div class="stat-label">Anti-Bot</div>
+        </div>
+        <div class="stat-card" data-category="captcha">
+          <div class="stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <div class="stat-value" id="captchaCount">0</div>
+          <div class="stat-label">CAPTCHA</div>
+        </div>
+        <div class="stat-card" data-category="fingerprint">
+          <div class="stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04c.462-.87.79-1.804.985-2.783M12 11c0-2.21.894-4.208 2.338-5.662M6.453 4.5C4.877 6.115 4 8.443 4 11c0 2.557.877 4.885 2.453 6.5M17.547 4.5C19.123 6.115 20 8.443 20 11c0 1.572-.338 3.059-.947 4.381M12 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
+            </svg>
+          </div>
+          <div class="stat-value" id="fingerprintCount">0</div>
+          <div class="stat-label">Fingerprint</div>
+        </div>
+        <div class="stat-card status-card" id="statusCard">
+          <div class="stat-icon status-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="stat-value" id="statusText">OK</div>
+          <div class="stat-label">Status</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detection Results -->
+    <section class="results-section" id="resultsSection">
+      <div class="results-header">
+        <h2 class="results-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          Detected Protections
+        </h2>
+        <span class="results-count" id="resultsCount">0 found</span>
+      </div>
+      
+      <div class="results-list" id="resultsList">
+        <!-- Detection cards will be inserted here -->
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <h3>No protections detected</h3>
+          <p>This page appears clean. Tealy found no anti-bot systems, CAPTCHAs, or fingerprinting.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action Buttons -->
+    <footer class="actions-footer">
+      <button class="action-btn secondary" id="copyBtn" title="Copy detection report">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <span>Copy Report</span>
+      </button>
+      <button class="action-btn primary" id="rescanBtn" title="Rescan current page">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+        </svg>
+        <span>Rescan</span>
+      </button>
+      <a href="https://scrappey.com" target="_blank" class="action-btn brand" id="scrappeyBtn" title="Visit Scrappey.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        <span>Scrappey</span>
+      </a>
+    </footer>
+
+    <!-- Settings Panel (Slide-out) -->
+    <div class="settings-overlay" id="settingsOverlay"></div>
+    <aside class="settings-panel" id="settingsPanel">
+      <div class="settings-header">
+        <h2>Settings</h2>
+        <button class="close-btn" id="closeSettings">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="settings-content">
+        <div class="setting-group">
+          <div class="setting-info">
+            <span class="setting-label">Cache Duration</span>
+            <span class="setting-desc">How long to cache detection results</span>
+          </div>
+          <div class="setting-control">
+            <input type="range" id="cacheDuration" min="1" max="24" value="12" class="range-input">
+            <span class="range-value" id="cacheDurationValue">12h</span>
+          </div>
+        </div>
+        <div class="setting-group">
+          <div class="setting-info">
+            <span class="setting-label">Show Fingerprinting</span>
+            <span class="setting-desc">Detect browser fingerprinting APIs</span>
+          </div>
+          <div class="setting-control">
+            <label class="switch">
+              <input type="checkbox" id="showFingerprinting" checked>
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+        </div>
+        <div class="setting-group">
+          <div class="setting-info">
+            <span class="setting-label">Auto-scan on load</span>
+            <span class="setting-desc">Automatically scan pages when they load</span>
+          </div>
+          <div class="setting-control">
+            <label class="switch">
+              <input type="checkbox" id="autoScan" checked>
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+        </div>
+        <!-- Scrappey API Section -->
+        <div class="setting-section-header">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+          </svg>
+          <span>Scrappey API</span>
+        </div>
+        
+        <div class="api-key-section">
+          <div class="api-input-group">
+            <input type="password" id="apiKeyInput" class="api-input" placeholder="Enter your Scrappey API key">
+            <button id="saveApiKey" class="api-save-btn">Save</button>
+          </div>
+          <div class="api-info">
+            <div class="api-balance">
+              <span class="balance-label">Balance:</span>
+              <span class="balance-value" id="apiBalance">--</span>
+            </div>
+            <span class="api-status" id="apiStatus">Not configured</span>
+          </div>
+          <button id="checkBalance" class="setting-btn secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            </svg>
+            Check Balance
+          </button>
+          <a href="https://scrappey.com" target="_blank" class="api-link">
+            Get an API key at scrappey.com →
+          </a>
+        </div>
+
+        <div class="setting-actions">
+          <button class="setting-btn danger" id="clearCacheBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+            Clear Cache
+          </button>
+        </div>
+      </div>
+      <div class="settings-footer">
+        <span class="version">v1.0.0</span>
+        <a href="https://scrappey.com" target="_blank" class="scrappey-link">scrappey.com</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Scripts -->
+  <script src="modules/trace-logger.js"></script>
+  <script src="utils/debug.js"></script>
+  <script src="utils/utils.js"></script>
+  <script src="modules/cache-handler.js"></script>
+  <script src="modules/rule-loader.js"></script>
+  <script src="modules/score-calculator.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
+

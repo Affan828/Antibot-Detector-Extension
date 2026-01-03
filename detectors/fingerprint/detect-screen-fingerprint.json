@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "id": "screen-fingerprint",
+    "label": "Screen Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Screen",
+    "icon": "vendor-default.png",
+    "color": "#3B82F6",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Collects screen resolution, color depth, and display properties for device identification.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Screen.prototype.width", "score": 90, "note": "Screen width" },
+      { "target": "Screen.prototype.height", "score": 90, "note": "Screen height" },
+      { "target": "Screen.prototype.colorDepth", "score": 85, "note": "Color depth" },
+      { "target": "Screen.prototype.pixelDepth", "score": 85, "note": "Pixel depth" },
+      { "target": "Screen.prototype.availWidth", "score": 80, "note": "Available width" },
+      { "target": "Screen.prototype.availHeight", "score": 80, "note": "Available height" }
+    ]
+  }
+}

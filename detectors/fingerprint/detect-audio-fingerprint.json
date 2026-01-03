@@ -1,0 +1,25 @@
+{
+  "detector": {
+    "id": "audio-fingerprint",
+    "label": "Audio Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://webaudio.github.io/web-audio-api/",
+    "icon": "vendor-default.png",
+    "color": "#7C3AED",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Uses Web Audio API to generate unique audio fingerprints based on device audio processing differences.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "AudioBuffer.prototype.getChannelData", "score": 95, "note": "Reads audio channel data for fingerprinting" },
+      { "target": "AnalyserNode.prototype.getFloatFrequencyData", "score": 90, "note": "Analyzes audio frequency data" },
+      { "target": "BaseAudioContext.prototype.createOscillator", "score": 85, "note": "Creates audio oscillator for signal generation" },
+      { "target": "OfflineAudioContext.prototype.startRendering", "score": 90, "note": "Renders audio offline for analysis" },
+      { "target": "AudioContext.prototype.createAnalyser", "score": 85, "note": "Creates analyser node" }
+    ]
+  }
+}

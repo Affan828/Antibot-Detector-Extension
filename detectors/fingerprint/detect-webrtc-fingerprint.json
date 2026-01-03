@@ -1,0 +1,24 @@
+{
+  "detector": {
+    "id": "webrtc-fingerprint",
+    "label": "WebRTC Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API",
+    "icon": "vendor-default.png",
+    "color": "#6366F1",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Uses WebRTC to leak local and public IP addresses for network-based fingerprinting.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "RTCPeerConnection.prototype.createDataChannel", "score": 95, "note": "Creates WebRTC data channel" },
+      { "target": "RTCPeerConnection.prototype.createOffer", "score": 90, "note": "Creates WebRTC offer" },
+      { "target": "RTCPeerConnection.prototype.createAnswer", "score": 90, "note": "Creates WebRTC answer" },
+      { "target": "RTCPeerConnection.prototype.setLocalDescription", "score": 85, "note": "Sets local description" }
+    ]
+  }
+}

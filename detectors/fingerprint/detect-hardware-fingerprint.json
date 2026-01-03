@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "id": "hardware-fingerprint",
+    "label": "Hardware Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Navigator",
+    "icon": "vendor-default.png",
+    "color": "#6366F1",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Collects hardware information including CPU cores, memory, and device capabilities.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Navigator.prototype.hardwareConcurrency", "score": 90, "note": "Gets CPU core count" },
+      { "target": "Navigator.prototype.deviceMemory", "score": 95, "note": "Gets device RAM amount" },
+      { "target": "Navigator.prototype.maxTouchPoints", "score": 85, "note": "Gets max touch points" }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "detector": {
+    "id": "aliexpress",
+    "label": "Alibaba CAPTCHA",
+    "active": true,
+    "type": "captcha"
+  },
+  "meta": {
+    "vendor": "Alibaba Group",
+    "vendorUrl": "https://www.alibaba.com",
+    "icon": "vendor-default.png",
+    "color": "#FF6A00",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Slide CAPTCHA used on Alibaba, AliExpress, and Taobao.",
+  "patterns": {
+    "urls": [
+      { "match": "alibaba.com", "score": 70, "note": "Alibaba domain" },
+      { "match": "aliexpress.com", "score": 70, "note": "AliExpress domain" }
+    ],
+    "content": [
+      { "match": "nc_container", "score": 95, "note": "Alibaba CAPTCHA container" },
+      { "match": "aliyuncs.com", "score": 80, "note": "Aliyun cloud reference" }
+    ],
+    "dom": [
+      { "match": "#nc_1_wrapper", "score": 100, "note": "Alibaba slide CAPTCHA" }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "id": "crypto-fingerprint",
+    "label": "Crypto API Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API",
+    "icon": "vendor-default.png",
+    "color": "#10B981",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Uses Web Crypto API to detect cryptographic capabilities and generate fingerprints.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Crypto.prototype.getRandomValues", "score": 80, "note": "Gets random values for fingerprinting" },
+      { "target": "SubtleCrypto.prototype.encrypt", "score": 75, "note": "Encryption operations" },
+      { "target": "SubtleCrypto.prototype.generateKey", "score": 75, "note": "Key generation" }
+    ]
+  }
+}

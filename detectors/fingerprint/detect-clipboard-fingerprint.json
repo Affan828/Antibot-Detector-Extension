@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "id": "clipboard-fingerprint",
+    "label": "Clipboard Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API",
+    "icon": "vendor-default.png",
+    "color": "#EC4899",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Accesses clipboard content to identify users based on copied data patterns.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Clipboard.prototype.readText", "score": 95, "note": "Reads clipboard text content" },
+      { "target": "Clipboard.prototype.read", "score": 90, "note": "Reads clipboard data" },
+      { "target": "navigator.clipboard.readText", "score": 95, "note": "Navigator clipboard read" }
+    ]
+  }
+}

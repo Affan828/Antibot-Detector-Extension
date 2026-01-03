@@ -1,0 +1,33 @@
+{
+  "detector": {
+    "id": "shapesecurity",
+    "label": "Shape Security",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Shape Security (F5)",
+    "vendorUrl": "https://www.f5.com/products/security/shape-security",
+    "icon": "vendor-shapesecurity.png",
+    "color": "#5C2D91",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Enterprise bot protection with JavaScript instrumentation and behavioral analysis.",
+  "patterns": {
+    "cookies": [
+      { "match": "_imp_apg_r_", "score": 100, "note": "Shape impression cookie" },
+      { "match": "_imp_di_pc_", "score": 95, "note": "Device ID cookie" }
+    ],
+    "content": [
+      { "match": "shape.min.js", "score": 100, "note": "Shape client script" },
+      { "match": "__shapeRender", "score": 95, "note": "Shape render function" }
+    ],
+    "globals": [
+      { "match": "__fp", "score": 95, "note": "Fingerprint object" }
+    ],
+    "headers": [
+      { "match": "X-Shape-", "score": 90, "note": "Shape header prefix" }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "detector": {
+    "id": "botguard",
+    "label": "Google BotGuard",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Google",
+    "vendorUrl": "https://www.google.com",
+    "icon": "vendor-default.png",
+    "color": "#4285F4",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Google's internal bot detection used across Google services.",
+  "patterns": {
+    "urls": [
+      { "match": "botguard", "score": 100, "note": "BotGuard script" },
+      { "match": "/bg/", "score": 75, "note": "BotGuard path" }
+    ],
+    "content": [
+      { "match": "botguard", "score": 95, "note": "BotGuard reference" }
+    ],
+    "globals": [
+      { "match": "botguard", "score": 100, "note": "BotGuard object" }
+    ]
+  }
+}

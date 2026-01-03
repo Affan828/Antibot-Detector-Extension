@@ -1,0 +1,40 @@
+{
+  "detector": {
+    "id": "datadome",
+    "label": "DataDome",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "DataDome",
+    "vendorUrl": "https://datadome.co",
+    "icon": "vendor-datadome.png",
+    "color": "#1E3A5F",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Real-time bot protection with device fingerprinting and behavioral analysis.",
+  "patterns": {
+    "cookies": [
+      { "match": "datadome", "score": 100, "note": "Main DataDome cookie" },
+      { "match": "datadome_cid", "score": 95, "note": "Client ID cookie" }
+    ],
+    "urls": [
+      { "match": "datadome.co/captcha", "score": 100, "note": "CAPTCHA endpoint" },
+      { "match": "js.datadome.co", "score": 95, "note": "JavaScript CDN" },
+      { "match": "api.datadome.co", "score": 90, "note": "API endpoint" }
+    ],
+    "content": [
+      { "match": "ddjskey", "score": 100, "note": "DataDome JS key" },
+      { "match": "DataDome", "score": 85, "note": "Brand name in page" }
+    ],
+    "globals": [
+      { "match": "ddjskey", "score": 100, "note": "DataDome key variable" },
+      { "match": "datadome", "score": 95, "note": "DataDome namespace" }
+    ],
+    "dom": [
+      { "match": ".datadome-captcha", "score": 100, "note": "CAPTCHA container" },
+      { "match": "#datadome-captcha", "score": 100, "note": "CAPTCHA element ID" }
+    ]
+  }
+}

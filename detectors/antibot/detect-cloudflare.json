@@ -1,0 +1,40 @@
+{
+  "detector": {
+    "id": "cloudflare",
+    "label": "Cloudflare Bot Management",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Cloudflare, Inc.",
+    "vendorUrl": "https://www.cloudflare.com/products/bot-management/",
+    "icon": "vendor-cloudflare.png",
+    "color": "#F6821F",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Enterprise-grade bot management using machine learning, behavioral analysis, and challenge pages.",
+  "patterns": {
+    "cookies": [
+      { "match": "__cf_bm", "score": 95, "note": "Bot management session cookie" },
+      { "match": "cf_clearance", "score": 100, "note": "Challenge clearance token" },
+      { "match": "__cflb", "score": 80, "note": "Load balancer cookie" }
+    ],
+    "urls": [
+      { "match": "cdn-cgi/challenge-platform", "score": 95, "note": "Challenge platform endpoint" },
+      { "match": "challenges.cloudflare.com", "score": 100, "note": "Challenge domain" },
+      { "match": "/cdn-cgi/scripts/", "score": 70, "note": "CDN script resources" }
+    ],
+    "content": [
+      { "match": "cf-browser-verification", "score": 100, "note": "Browser verification element" },
+      { "match": "turnstile.render", "score": 100, "note": "Turnstile CAPTCHA init" },
+      { "match": "__cf_chl_ctx", "score": 90, "note": "Challenge context variable" },
+      { "match": "Checking your browser", "score": 85, "note": "Challenge page text" }
+    ],
+    "globals": [
+      { "match": "_cf_chl_opt", "score": 95, "note": "Challenge options object" },
+      { "match": "turnstile", "score": 95, "note": "Turnstile API object" },
+      { "match": "__cfRLUnblockHandlers", "score": 80, "note": "Rate limit handlers" }
+    ]
+  }
+}

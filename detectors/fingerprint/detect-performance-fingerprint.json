@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "id": "performance-fingerprint",
+    "label": "Performance API Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Performance",
+    "icon": "vendor-default.png",
+    "color": "#10B981",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Uses Performance API timing data to create device-specific fingerprints.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Performance.prototype.now", "score": 95, "note": "High-resolution timestamp" },
+      { "target": "Performance.prototype.memory", "score": 90, "note": "JavaScript heap memory info" },
+      { "target": "Performance.prototype.getEntriesByType", "score": 85, "note": "Performance entries" }
+    ]
+  }
+}

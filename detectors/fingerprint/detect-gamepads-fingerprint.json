@@ -1,0 +1,21 @@
+{
+  "detector": {
+    "id": "gamepads-fingerprint",
+    "label": "Gamepad API Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API",
+    "icon": "vendor-default.png",
+    "color": "#F97316",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Detects connected game controllers and their properties for device identification.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Navigator.prototype.getGamepads", "score": 100, "note": "Gets connected gamepad devices" }
+    ]
+  }
+}

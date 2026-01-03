@@ -1,0 +1,85 @@
+{
+  "categories": {
+    "antibot": {
+      "label": "Anti-Bot",
+      "color": "#F97316",
+      "icon": "shield",
+      "detectors": [
+        "akamai",
+        "cloudflare", 
+        "aws-waf",
+        "botguard",
+        "f5",
+        "datadome",
+        "incapsula",
+        "perimeterx",
+        "shapesecurity",
+        "sucuri",
+        "reblaze",
+        "threatmetrix",
+        "meetrics",
+        "ocule",
+        "kasada",
+        "cheq"
+      ]
+    },
+    "captcha": {
+      "label": "CAPTCHA",
+      "color": "#3B82F6",
+      "icon": "lock",
+      "detectors": [
+        "hcaptcha",
+        "recaptcha",
+        "geetest",
+        "qcloud",
+        "funcaptcha",
+        "aliexpress",
+        "friendlycaptcha",
+        "captchaeu"
+      ]
+    },
+    "fingerprint": {
+      "label": "Fingerprint",
+      "color": "#8B5CF6",
+      "icon": "fingerprint",
+      "detectors": [
+        "audio-fingerprint",
+        "battery-fingerprint",
+        "canvas-fingerprint",
+        "clipboard-fingerprint",
+        "crypto-fingerprint",
+        "css-fingerprint",
+        "font-fingerprint",
+        "gamepads-fingerprint",
+        "geolocation-fingerprint",
+        "hardware-fingerprint",
+        "indexeddb-fingerprint",
+        "media-fingerprint",
+        "navigator-fingerprint",
+        "orientation-fingerprint",
+        "performance-fingerprint",
+        "screen-fingerprint",
+        "storage-fingerprint",
+        "timezone-fingerprint",
+        "usb-fingerprint",
+        "webgl-fingerprint",
+        "webrtc-fingerprint"
+      ]
+    }
+  },
+  "theme": {
+    "primary": "#14B8A6",
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "danger": "#EF4444"
+  },
+  "matchTypes": {
+    "cookie": "#FBBF24",
+    "url": "#06B6D4",
+    "content": "#14B8A6",
+    "dom": "#3B82F6",
+    "window": "#22C55E",
+    "jsHook": "#8B5CF6",
+    "header": "#EC4899"
+  }
+}

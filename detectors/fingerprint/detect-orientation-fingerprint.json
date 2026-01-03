@@ -1,0 +1,22 @@
+{
+  "detector": {
+    "id": "orientation-fingerprint",
+    "label": "Device Orientation Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Device_Orientation_Event",
+    "icon": "vendor-default.png",
+    "color": "#F59E0B",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Accesses device orientation sensors (gyroscope, accelerometer) for fingerprinting.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "DeviceOrientationEvent", "score": 90, "note": "Device orientation events" },
+      { "target": "DeviceMotionEvent", "score": 90, "note": "Device motion events" }
+    ]
+  }
+}

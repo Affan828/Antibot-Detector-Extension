@@ -1,0 +1,37 @@
+{
+  "detector": {
+    "id": "akamai",
+    "label": "Akamai Bot Manager",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Akamai Technologies",
+    "vendorUrl": "https://www.akamai.com/products/bot-manager",
+    "icon": "vendor-akamai.png",
+    "color": "#0096D6",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Advanced bot detection using sensor data collection and behavioral analysis.",
+  "patterns": {
+    "cookies": [
+      { "match": "_abck", "score": 100, "note": "Primary Akamai cookie" },
+      { "match": "bm_sv", "score": 95, "note": "Session verification cookie" },
+      { "match": "bm_sz", "score": 90, "note": "Size tracking cookie" },
+      { "match": "ak_bmsc", "score": 95, "note": "Bot manager session cookie" }
+    ],
+    "urls": [
+      { "match": "akam/13/", "score": 90, "note": "Akamai pixel endpoint" },
+      { "match": "akamaihd.net", "score": 75, "note": "Akamai CDN domain" }
+    ],
+    "content": [
+      { "match": "bmak.js", "score": 100, "note": "Bot manager script" },
+      { "match": "_BmfpBSUID", "score": 90, "note": "Fingerprint session ID" }
+    ],
+    "globals": [
+      { "match": "bmak", "score": 100, "note": "Bot manager API object" },
+      { "match": "_abck", "score": 95, "note": "Akamai cookie variable" }
+    ]
+  }
+}

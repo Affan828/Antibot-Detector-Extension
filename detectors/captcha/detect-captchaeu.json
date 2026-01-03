@@ -1,0 +1,25 @@
+{
+  "detector": {
+    "id": "captchaeu",
+    "label": "Captcha.eu",
+    "active": true,
+    "type": "captcha"
+  },
+  "meta": {
+    "vendor": "Captcha.eu",
+    "vendorUrl": "https://www.captcha.eu",
+    "icon": "vendor-default.png",
+    "color": "#2563EB",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "European GDPR-compliant CAPTCHA service.",
+  "patterns": {
+    "urls": [
+      { "match": "captcha.eu", "score": 100, "note": "Captcha.eu domain" }
+    ],
+    "content": [
+      { "match": "captcha.eu", "score": 90, "note": "Captcha.eu reference" }
+    ]
+  }
+}

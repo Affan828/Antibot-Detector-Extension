@@ -1,0 +1,25 @@
+{
+  "detector": {
+    "id": "webgl-fingerprint",
+    "label": "WebGL Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API",
+    "icon": "vendor-default.png",
+    "color": "#EC4899",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Extracts GPU and driver information through WebGL API for device identification.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "WebGLRenderingContext.prototype.getParameter", "score": 95, "note": "Gets WebGL parameters including GPU info" },
+      { "target": "WebGLRenderingContext.prototype.getExtension", "score": 90, "note": "Gets supported WebGL extensions" },
+      { "target": "WebGL2RenderingContext.prototype.getParameter", "score": 95, "note": "Gets WebGL2 parameters" },
+      { "target": "WebGLRenderingContext.prototype.getSupportedExtensions", "score": 85, "note": "Lists all supported extensions" },
+      { "target": "WebGLRenderingContext.prototype.getShaderPrecisionFormat", "score": 80, "note": "Gets shader precision" }
+    ]
+  }
+}

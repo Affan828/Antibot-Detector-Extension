@@ -1,0 +1,37 @@
+{
+  "detector": {
+    "id": "funcaptcha",
+    "label": "FunCaptcha (Arkose Labs)",
+    "active": true,
+    "type": "captcha"
+  },
+  "meta": {
+    "vendor": "Arkose Labs",
+    "vendorUrl": "https://www.arkoselabs.com",
+    "icon": "vendor-funcaptcha.png",
+    "color": "#FF6B2C",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Interactive puzzle CAPTCHA used by Microsoft, EA, and Roblox.",
+  "patterns": {
+    "urls": [
+      { "match": "arkoselabs.com", "score": 100, "note": "Arkose Labs domain" },
+      { "match": "funcaptcha.com", "score": 100, "note": "FunCaptcha domain" },
+      { "match": "client-api.arkoselabs.com", "score": 95, "note": "Client API" }
+    ],
+    "content": [
+      { "match": "FunCaptcha", "score": 100, "note": "FunCaptcha reference" },
+      { "match": "ArkoseEnforcement", "score": 100, "note": "Arkose enforcement" },
+      { "match": "arkose", "score": 85, "note": "Arkose reference" }
+    ],
+    "dom": [
+      { "match": "#funcaptcha", "score": 100, "note": "FunCaptcha container" },
+      { "match": ".funcaptcha", "score": 95, "note": "FunCaptcha class" }
+    ],
+    "globals": [
+      { "match": "ArkoseEnforcement", "score": 100, "note": "Arkose object" },
+      { "match": "fc_callback", "score": 90, "note": "FunCaptcha callback" }
+    ]
+  }
+}

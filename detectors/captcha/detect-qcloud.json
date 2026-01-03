@@ -1,0 +1,30 @@
+{
+  "detector": {
+    "id": "qcloud",
+    "label": "Tencent QCloud CAPTCHA",
+    "active": true,
+    "type": "captcha"
+  },
+  "meta": {
+    "vendor": "Tencent Cloud",
+    "vendorUrl": "https://cloud.tencent.com",
+    "icon": "vendor-default.png",
+    "color": "#006EFF",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Tencent's CAPTCHA service for Chinese websites.",
+  "patterns": {
+    "urls": [
+      { "match": "ssl.captcha.qq.com", "score": 100, "note": "QQ CAPTCHA domain" },
+      { "match": "captcha.tencentcloudapi.com", "score": 100, "note": "Tencent Cloud API" }
+    ],
+    "content": [
+      { "match": "TencentCaptcha", "score": 100, "note": "Tencent CAPTCHA" },
+      { "match": "tcaptcha", "score": 95, "note": "TCaptcha reference" }
+    ],
+    "globals": [
+      { "match": "TencentCaptcha", "score": 100, "note": "TencentCaptcha object" }
+    ]
+  }
+}

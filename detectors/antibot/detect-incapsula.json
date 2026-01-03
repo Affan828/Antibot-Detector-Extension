@@ -1,0 +1,36 @@
+{
+  "detector": {
+    "id": "incapsula",
+    "label": "Imperva (Incapsula)",
+    "active": true,
+    "type": "antibot"
+  },
+  "meta": {
+    "vendor": "Imperva",
+    "vendorUrl": "https://www.imperva.com",
+    "icon": "vendor-imperva.png",
+    "color": "#00A4E4",
+    "updatedAt": "2025-01-03",
+    "scrappeyBypass": "https://docs.scrappey.com"
+  },
+  "info": "Cloud-based WAF and bot protection with advanced client-side verification.",
+  "patterns": {
+    "cookies": [
+      { "match": "incap_ses_", "score": 100, "note": "Incapsula session cookie" },
+      { "match": "visid_incap_", "score": 95, "note": "Visitor ID cookie" },
+      { "match": "nlbi_", "score": 85, "note": "Load balancer cookie" },
+      { "match": "reese84", "score": 100, "note": "Advanced bot cookie" }
+    ],
+    "urls": [
+      { "match": "/_Incapsula_Resource", "score": 100, "note": "Resource path" }
+    ],
+    "content": [
+      { "match": "Incapsula incident ID", "score": 100, "note": "Block page indicator" },
+      { "match": "incapsula", "score": 75, "note": "Brand reference" }
+    ],
+    "globals": [
+      { "match": "reese84", "score": 100, "note": "Reese84 challenge object" },
+      { "match": "___utmvc", "score": 85, "note": "Verification cookie var" }
+    ]
+  }
+}

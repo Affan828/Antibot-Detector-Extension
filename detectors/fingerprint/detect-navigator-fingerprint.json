@@ -1,0 +1,24 @@
+{
+  "detector": {
+    "id": "navigator-fingerprint",
+    "label": "Navigator Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Navigator",
+    "icon": "vendor-default.png",
+    "color": "#14B8A6",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Collects browser and system information from Navigator object for fingerprinting.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "Navigator.prototype.userAgent", "score": 90, "note": "Gets user agent string" },
+      { "target": "Navigator.prototype.platform", "score": 85, "note": "Gets platform info" },
+      { "target": "Navigator.prototype.language", "score": 80, "note": "Gets language setting" },
+      { "target": "Navigator.prototype.languages", "score": 80, "note": "Gets language preferences" }
+    ]
+  }
+}

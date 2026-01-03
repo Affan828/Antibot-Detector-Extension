@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "id": "usb-fingerprint",
+    "label": "WebUSB Fingerprinting",
+    "active": true,
+    "type": "fingerprint"
+  },
+  "meta": {
+    "technique": "Browser API",
+    "infoUrl": "https://developer.mozilla.org/en-US/docs/Web/API/WebUSB_API",
+    "icon": "vendor-default.png",
+    "color": "#EC4899",
+    "updatedAt": "2025-01-03"
+  },
+  "info": "Enumerates connected USB devices for hardware-based fingerprinting.",
+  "patterns": {
+    "jsHooks": [
+      { "target": "USB.prototype.getDevices", "score": 100, "note": "Lists connected USB devices" },
+      { "target": "USB.prototype.requestDevice", "score": 95, "note": "Requests USB device access" },
+      { "target": "navigator.usb.getDevices", "score": 100, "note": "USB device enumeration" }
+    ]
+  }
+}
