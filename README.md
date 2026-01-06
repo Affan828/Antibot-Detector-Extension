@@ -9,6 +9,7 @@
 </p>
 
 <p align="center">
+  <a href="https://chromewebstore.google.com/detail/scrappey-bot-detector/dkjeohgmjalaofokjnkllihjhcaolllh">Chrome Web Store</a> · 
   <a href="https://scrappey.com">Scrappey.com</a> · 
   <a href="https://docs.scrappey.com">Documentation</a> · 
   <a href="https://discord.gg/scrappey">Discord</a>
@@ -27,6 +28,14 @@ Scrappey Bot Detector scans websites and shows you:
 Each detection shows what triggered it (cookies, scripts, DOM elements, etc.) with confidence scores.
 
 ## Installation
+
+### Option 1: Install from Chrome Web Store (Recommended)
+
+1. Visit the [Chrome Web Store page](https://chromewebstore.google.com/detail/scrappey-bot-detector/dkjeohgmjalaofokjnkllihjhcaolllh)
+2. Click **Add to Chrome**
+3. Click the extension icon to start detecting
+
+### Option 2: Manual Installation
 
 1. Download or clone this repository
 2. Open `chrome://extensions/` in Chrome
@@ -94,6 +103,7 @@ Add the detector ID to `detectors/index.json` and reload the extension.
 
 ## Links
 
+- [Chrome Web Store](https://chromewebstore.google.com/detail/scrappey-bot-detector/dkjeohgmjalaofokjnkllihjhcaolllh) — Install the extension
 - [Scrappey.com](https://scrappey.com) — Bypass anti-bot protections
 - [Documentation](https://docs.scrappey.com) — API guides and tutorials
 - [Discord](https://discord.gg/scrappey) — Community support
